@@ -1,0 +1,56 @@
+import java.lang.*;
+import java.util.*;
+
+class Display
+{
+	public void Pattern(int iRow,int iCol)
+	{	
+		if(iRow != iCol)
+		{
+			return;
+		}
+	
+		for(int i=1;i<=iRow;i++)
+		{
+			for(int j=1;j<=iCol+1;j++)
+			{
+				if(i==j)
+				{
+					System.out.print(i+"\t");
+				}
+				else if((j==1)||(j==iCol+1))
+				{
+					System.out.print(j+"\t");
+				}
+				else if(i==1)
+				{
+					System.out.print(j+"\t");
+				}
+				else
+				{
+					System.out.print(" \t");
+				}
+				
+			}
+			System.out.println();
+		}
+	}
+}
+
+class Program5
+{
+	public static void main(String arg[])
+	{
+		Scanner sobj = new Scanner(System.in);
+		
+		System.out.println("Enter the rows");
+		int iValue1 = sobj.nextInt();
+		
+		System.out.println("Enter the columns");
+		int iValue2 = sobj.nextInt();
+		
+		Display dobj = new Display();
+		
+		dobj.Pattern(iValue1,iValue2);
+	}
+}
